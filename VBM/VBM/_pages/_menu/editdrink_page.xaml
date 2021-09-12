@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:sf="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             ios:Page.UseSafeArea="False"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="VBM._pages._menu.editdrink_page"
+             BackgroundColor="{StaticResource vbmpagebackground}">
+    <Grid Padding="10" RowSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid IsVisible="false">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="76" />
+            </Grid.ColumnDefinitions>
+
+            <border:SfBorder
+                Padding="20,0"
+                BackgroundColor="{StaticResource vbmlightmiddlegray}"
+                BorderWidth="0"
+                CornerRadius="30"
+                HasShadow="False">
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="20"
+                    VerticalOptions="Center">
+
+                    <Image
+                        Aspect="Fill"
+                        HeightRequest="18"
+                        Source="sreachicon"
+                        VerticalOptions="Center"
+                        WidthRequest="18" />
+
+                    <Label
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="17"
+                        Text="{Binding searchTitle}"
+                        TextColor="{StaticResource vbmgray}"
+                        VerticalOptions="Center" />
+
+                </StackLayout>
+
+            </border:SfBorder>
+
+            <btn:SfButton
+                Grid.Column="1"
+                BackgroundColor="{StaticResource vbmyellow}"
+                CornerRadius="30">
+                <Image
+                    Aspect="Fill"
+                    HeightRequest="20"
+                    HorizontalOptions="Center"
+                    Source="voice"
+                    VerticalOptions="Center"
+                    WidthRequest="15" />
+            </btn:SfButton>
+
+        </Grid>
+
+        <Grid
+            HeightRequest="20"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            WidthRequest="20">
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="12"
+                HorizontalOptions="Center"
+                Source="left"
+                VerticalOptions="Center"
+                WidthRequest="6" />
+        </Grid>
+
+        <ScrollView
+            Grid.Row="1"
+            HorizontalScrollBarVisibility="Never"
+            Orientation="Horizontal">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding drinkcombos}"
+                Orientation="Horizontal"
+                Spacing="20">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid WidthRequest="130">
+
+                            <Label
+                                FontFamily="{StaticResource lbo}"
+                                FontSize="17"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding name}"
+                                TextColor="{Binding TextColor}" />
+
+                            <BoxView
+                                BackgroundColor="{Binding BoxColor}"
+                                HeightRequest="3"
+                                VerticalOptions="End" />
+
+
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </StackLayout>
+        </ScrollView>
+
+        <sf:SfListView
+            Grid.Row="2"
+            Margin="0,10"
+            ItemSize="275"
+            ItemSpacing="5,20,5,0"
+            ItemsSource="{Binding drinkEmes}"
+            SelectionBackgroundColor="Transparent">
+
+            <sf:SfListView.LayoutManager>
+                <sf:GridLayout SpanCount="2" />
+            </sf:SfListView.LayoutManager>
+
+            <sf:SfListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="230" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+
+                        <Grid WidthRequest="160">
+
+                            <border:SfBorder
+                                BackgroundColor="White"
+                                BorderWidth="0"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="200"
+                                ShadowColor="WhiteSmoke"
+                                VerticalOptions="End">
+
+                                <Grid HeightRequest="90" VerticalOptions="End">
+                                    <StackLayout
+                                        HorizontalOptions="Center"
+                                        Spacing="5"
+                                        VerticalOptions="Center">
+
+                                        <Label
+                                            Margin="10,0"
+                                            FontSize="18"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding name}" />
+
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                                            <Label
+                                                FontSize="17"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                Text="{Binding nguyengia}"
+                                                TextColor="{StaticResource vbmlightgray}" />
+
+                                            <Label
+                                                FontSize="17"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                Text="{Binding dongia}"
+                                                TextColor="{StaticResource vbmbrick}" />
+
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Grid>
+
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                CornerRadius="20"
+                                HasShadow="False"
+                                HeightRequest="140"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start"
+                                WidthRequest="125">
+                                <Image Aspect="Fill" Source="{Binding img}" />
+                            </border:SfBorder>
+
+                        </Grid>
+
+                        <Rectangle
+                            Grid.Row="1"
+                            Fill="white"
+                            RadiusX="20"
+                            RadiusY="20"
+                            Stroke="LightGray"
+                            StrokeDashArray="2,1"
+                            StrokeDashOffset="6"
+                            StrokeThickness="2" />
+
+                        <Grid Grid.Row="1">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout
+                                Margin="10,0"
+                                HorizontalOptions="Center"
+                                Spacing="0"
+                                VerticalOptions="Center">
+
+                                <Image
+                                    Aspect="Fill"
+                                    HeightRequest="11"
+                                    HorizontalOptions="Center"
+                                    Source="infodinhduong"
+                                    WidthRequest="11" />
+
+                                <Label
+                                    FontFamily="{StaticResource lr}"
+                                    FontSize="5"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding thongtindinhduong}"
+                                    TextColor="#7A7A7A" />
+
+                            </StackLayout>
+
+                            <Image
+                                Aspect="Fill"
+                                HorizontalOptions="End"
+                                Source="verdottedline"
+                                WidthRequest="1.5" />
+
+                            <Grid Grid.Column="1">
+                                <Label
+                                    Margin="0,0,20,0"
+                                    FontFamily="{StaticResource lbo}"
+                                    FontSize="14"
+                                    HorizontalOptions="End"
+                                    Text="{Binding chonTitle}"
+                                    TextColor="{StaticResource vbmgreen}"
+                                    VerticalOptions="Center" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="grSelectedDrink_tapped"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+
+                </DataTemplate>
+            </sf:SfListView.ItemTemplate>
+
+        </sf:SfListView>
+
+        <busyindicator:SfBusyIndicator
+            x:Name="busyindicator"
+            AnimationType="Cupertino"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            IsBusy="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="Center"
+            WidthRequest="50" />
+
+
+    </Grid>
+
+</ContentPage>

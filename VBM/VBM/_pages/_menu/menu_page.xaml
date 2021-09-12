@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:tb="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="VBM._pages._menu.menu_page"
+             BackgroundColor="{StaticResource vbmpagebackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{OnIdiom Tablet=115,Phone=95}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="{OnIdiom Tablet=123,Phone=75}"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="{OnIdiom Tablet='45,30',Phone='20,36,20,0'}" ColumnSpacing="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="64" />
+            </Grid.ColumnDefinitions>
+
+            <border:SfBorder
+                        Padding="20,0"
+                        BackgroundColor="{StaticResource vbmdeeplightgray}"
+                        BorderWidth="0"
+                        CornerRadius="30"
+                        HasShadow="False"
+                        HeightRequest="{OnIdiom Tablet=84,Phone=58}">
+
+                <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="10"
+                            VerticalOptions="Center">
+
+                    <ff:CachedImage
+                                HeightRequest="20"
+                                Source="sreachicon"
+                                VerticalOptions="Center"
+                                WidthRequest="20" />
+
+                    <Label
+                                FontSize="17"
+                                Text="Search"
+                                TextColor="{StaticResource vbmgray}" />
+
+                </StackLayout>
+
+            </border:SfBorder>
+
+            <border:SfBorder
+                        Grid.Column="1"
+                        Padding="20,0"
+                        BackgroundColor="{StaticResource vbmyellow}"
+                        BorderWidth="0"
+                        CornerRadius="30"
+                        HasShadow="False"
+                        HeightRequest="{OnIdiom Tablet=84,Phone=58}">
+
+                <ff:CachedImage
+                            HeightRequest="25"
+                            HorizontalOptions="Center"
+                            Source="voice"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+
+            </border:SfBorder>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10,0">
+
+            <tb:SfTabView BackgroundColor="{StaticResource vbmpagebackground}" 
+                          x:Name="tabview"
+                          TabHeight="50"
+                          TabWidth="110"
+                          Items="{Binding sfTabItems}"
+                          VisibleHeaderCount="3">
+
+                <tb:SfTabView.SelectionIndicatorSettings>
+                    <tb:SelectionIndicatorSettings
+                        Color="{StaticResource vbmyellow}" 
+                        Position="Bottom" 
+                        AnimationDuration="500"
+                        StrokeThickness="5"/>
+                </tb:SfTabView.SelectionIndicatorSettings>
+
+
+
+            </tb:SfTabView>
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="2" BackgroundColor="{StaticResource vbmlightmiddlegray}" >
+
+            <border:SfBorder BackgroundColor="{StaticResource vbmyellow}"
+                             BorderColor="Transparent"
+                             HasShadow="False"
+                             WidthRequest="{OnIdiom Tablet=410, Phone=155}"
+                             HeightRequest="{OnIdiom Tablet=100, Phone=58}"
+                             CornerRadius="50"
+                             Margin="0,0,-50,0"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center">
+
+                <StackLayout VerticalOptions="Center"
+                             Orientation="Horizontal"
+                             Margin="{OnIdiom Tablet='90,0,0,0',Phone='30,0,0,0'}"
+                             Spacing="{OnIdiom Tablet=100,Phone=30}">
+
+                    <ff:CachedImage Source="shoppingicon"
+                                    Aspect="Fill"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    WidthRequest="{OnIdiom Tablet=58,Phone=24}"
+                                    HeightRequest="{OnIdiom Tablet=58,Phone=24}"/>
+
+                    <ff:CachedImage Source="nexticon"
+                                Aspect="Fill"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                WidthRequest="{OnIdiom Tablet=34,Phone=6}"
+                                HeightRequest="{OnIdiom Tablet=46,Phone=12}"/>
+
+                </StackLayout>
+
+                <border:SfBorder.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="bdviewcart_tapped"/>
+                </border:SfBorder.GestureRecognizers>
+
+            </border:SfBorder>
+
+            <border:SfBorder BackgroundColor="#DF2C2C"
+                             BorderColor="Transparent"
+                             HasShadow="False"
+                             HeightRequest="{OnIdiom Tablet=53, Phone=25}"
+                             WidthRequest="{OnIdiom Tablet=53, Phone=25}"
+                             CornerRadius="30"
+                             Margin="{OnIdiom Tablet='0,0,80,0',Phone='120,0,0,0'}"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Start">
+
+                <Label Text="{Binding slcart}"
+                       TextColor="{StaticResource vbmwhite}"
+                       FontSize="{OnIdiom Tablet=24,Phone=14}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+
+            </border:SfBorder>
+
+        </Grid>
+
+        <busyindicator:SfBusyIndicator
+            x:Name="busyindicator"
+            AnimationType="Cupertino"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            IsBusy="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="Center"
+            WidthRequest="50" />
+        
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="VBM.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:tb="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!--  fontfamily  -->
+            <OnPlatform x:Key="lb" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Black.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Black" />
+            </OnPlatform>
+            <OnPlatform x:Key="lbi" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-BlackItalic.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-BlackItalic" />
+            </OnPlatform>
+            <OnPlatform x:Key="lbo" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Bold.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Bold" />
+            </OnPlatform>
+            <OnPlatform x:Key="lboi" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-BoldItalic.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-BoldItalic" />
+            </OnPlatform>
+            <OnPlatform x:Key="li" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Italic.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Italic" />
+            </OnPlatform>
+            <OnPlatform x:Key="ll" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Light.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Light" />
+            </OnPlatform>
+            <OnPlatform x:Key="lli" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-LightItalic.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-LightItalic" />
+            </OnPlatform>
+            <OnPlatform x:Key="lr" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Regular.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Regular" />
+            </OnPlatform>
+            <OnPlatform x:Key="lt" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-Thin.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-Thin" />
+            </OnPlatform>
+            <OnPlatform x:Key="lti" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Lato-ThinItalic.ttf#Lato" />
+                <On Platform="iOS" Value="Lato-ThinItalic" />
+            </OnPlatform>
+            <OnPlatform x:Key="pb" x:TypeArguments="x:String">
+                <On Platform="Android" Value="PuppyBellies.ttf#PuppyBellies" />
+                <On Platform="iOS" Value="PuppyBellies" />
+            </OnPlatform>
+
+            <!--  color  -->
+            <Color x:Key="vbmgreen">#0D432E</Color>
+            <Color x:Key="vbmlightgreen">#18794D</Color>
+            <Color x:Key="vbmblue">#0073DC</Color>
+            <Color x:Key="vbmyellow">#F8E400</Color>
+            <Color x:Key="vbmwhite">#FFFFFF</Color>
+            <Color x:Key="vbmpink">#FE4080</Color>
+            <Color x:Key="vbmbrick">#f47b0a</Color>
+            <Color x:Key="vbmpinttext">#FA4A0C</Color>
+            <Color x:Key="vbmwarning">#A43939</Color>
+            <Color x:Key="vbmgray">#BCBABA</Color>
+            <Color x:Key="vbmdeepgray">#7A7A7A</Color>
+            <Color x:Key="vbmlightgray">#9A9A9D</Color>
+            <Color x:Key="vbmlightmiddlegray">#ededed</Color>
+            <Color x:Key="vbmdeeplightgray">#EFEEEE</Color>
+            <Color x:Key="vbmpagebackground">#f2f2f2</Color>
+            <Color x:Key="vbmblack">#000000</Color>
+
+            <Style TargetType="tb:SfTabItem">
+                <Setter Property="TitleFontFamily" Value="{StaticResource lr}"/>
+                <Setter Property="TitleFontSize" Value="{OnIdiom Phone=15,Tablet=26}"/>
+                <Setter Property="SelectionColor" Value="{StaticResource vbmgreen}"/>
+                <Setter Property="TitleFontColor" Value="{StaticResource vbmlightgray}"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource lr}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource vbmgreen}" />
+            </Style>
+            <Style TargetType="button:SfButton">
+                <Setter Property="FontFamily" Value="{StaticResource lr}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+            <Style TargetType="border:SfBorder">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="BorderColor" Value="#d2d2d2" />
+                <Setter Property="BorderWidth" Value=".5" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

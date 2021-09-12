@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="VBM._pages._main.start_page"
+             BackgroundColor="{StaticResource vbmgreen}">
+    <Grid>
+        <ff:CachedImage Source="logo_cr"
+                            Aspect="Fill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+        <border:SfBorder HorizontalOptions="Center"
+                         VerticalOptions="End"
+                         WidthRequest="314"
+                         HeightRequest="70"
+                         CornerRadius="30"
+                         BackgroundColor="{StaticResource vbmwhite}"
+                         Margin="51,36"
+                         x:Name="bdstart">
+            <Label Text="Get Started"
+                   TextColor="{StaticResource vbmgreen}"
+                   FontSize="17"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <border:SfBorder.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </border:SfBorder.GestureRecognizers>
+        </border:SfBorder>
+
+    </Grid>
+    
+</ContentPage>

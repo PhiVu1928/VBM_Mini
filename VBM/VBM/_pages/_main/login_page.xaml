@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:input="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="VBM._pages._main.login_page"
+             BackgroundColor="{StaticResource vbmwhite}">
+    <ScrollView HorizontalOptions="Center"
+                VerticalOptions="Start">
+        
+        <StackLayout Orientation="Vertical"
+                     Margin="20,70"
+                     Spacing="30">
+
+            <ff:CachedImage Source="logo_cr"
+                            Aspect="Fill"
+                            WidthRequest="213"
+                            HeightRequest="146"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start"/>
+
+            <StackLayout Spacing="15">
+
+                <Label Text="Bạn vui lòng cho Vua Bánh Mì xin ít thông tin để được phục vụ bạn tốt nhất nhé"
+                       FontSize="17"
+                       TextColor="{StaticResource vbmblack}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="Số điện thoại"
+                       FontSize="15"
+                       TextColor="{StaticResource vbmgray}"/>
+
+                <Entry FontSize="17"/>
+
+                <Label Text="Tên"
+                       FontSize="15"
+                       TextColor="{StaticResource vbmgray}"/>
+
+                <Entry FontSize="17"/>
+
+                <Label Text="Nếu đã có tài khoản chỉ cần nhập số điện thoại thôi nhé!"
+                       FontSize="13"
+                       TextColor="{StaticResource vbmgray}"/>
+
+            </StackLayout>
+
+            <StackLayout Spacing="30"
+                         Orientation="Vertical">
+
+                <border:SfBorder HeightRequest="70"
+                             WidthRequest="314"
+                             CornerRadius="30"
+                             HasShadow="False"
+                             BorderColor="Transparent"
+                             BackgroundColor="{StaticResource vbmyellow}"
+                             HorizontalOptions="Center">
+                    <Label Text="Đăng nhập"
+                       FontSize="17"
+                       TextColor="{StaticResource vbmgreen}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                </border:SfBorder>
+
+                <border:SfBorder HeightRequest="70"
+                                 WidthRequest="314"
+                                 CornerRadius="30"
+                                 HasShadow="False"
+                                 BorderColor="Transparent"
+                                 BackgroundColor="{StaticResource vbmgray}"
+                                 HorizontalOptions="Center"
+                                 x:Name="bdnonlogin">
+                    
+                    <Label Text="Bỏ qua và đặt hàng ngay"
+                           FontSize="17"
+                           TextColor="{StaticResource vbmgreen}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
+
+                    <border:SfBorder.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </border:SfBorder.GestureRecognizers>
+                    
+                </border:SfBorder>
+
+            </StackLayout>
+            
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>
